@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h2 {
+		color : red;
+	}
+</style>
+</head>
+<body>
+<H1>my page</H1>
+<hr>
+<a href="/student/test">문제 풀기</a><br>
+<a th:href="@{/student/result(username=${username})}">결과 확인하기</a><Br>
+<a href="/admin/dashboard">※관리자 외 클릭금지※</a>
+<div th:if="${param.solved}">
+	<h2>재시험 불가입니다</h2>
+</div><br>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+    <h1>시험에 집중합시다</h1>
+    <hr>
+    <h2>1번. "그래도 지구는 돈다"라는 말을 남긴 철학자는?</h2>
+    <form action="/student/submitTest" method="post" onsubmit="return solve()">
+        <input type="radio" name="one" value="1">1. 니체<br/><br/>
+        <input type="radio" name="one" value="2">2. 칸트<br/><br/>
+        <input type="radio" name="one" value="3">3. 갈릴레오 갈릴레이<br/><br/>
+        <input type="radio" name="one" value="4">4. 마르크스<br/><br/>
+    <hr>
+    <h2>2번. "너 자신을 알라"라는 말을 남긴 철학자는?</h2>
+        <input type="radio" name="two" value="1">1. 아리스토텔레스<br/><br/>
+        <input type="radio" name="two" value="2">2. 소크라테스<br/><br/>
+        <input type="radio" name="two" value="3">3. 플라톤<br/><br/>
+        <input type="radio" name="two" value="4">4. 막시무스<br/><br/>
+    <hr>
+    <h2>3번. "신은 죽었다"라는 말을 남긴 철학자는?</h2>
+        <input type="radio" name="three" value="1">1. 하이데거<br/><br/>
+        <input type="radio" name="three" value="2">2. 공자<br/><br/>
+        <input type="radio" name="three" value="3">3. 맹자<br/><br/>
+        <input type="radio" name="three" value="4">4. 니체<br/><br/>
+    <hr>
+    <h2>4번. 이동하의 이전 직장의 위치는 어디일까요?</h2>
+        <input type="radio" name="four" value="1">1. 해운대구<br/><br/>
+        <input type="radio" name="four" value="2">2. 사하구<br/><br/>
+        <input type="radio" name="four" value="3">3. 부산진구<br/><br/>
+        <input type="radio" name="four" value="4">4. 금정구<br/><br/>
+    <hr>
+    <h2>5번. "학습은 학과 습이며 각각 적절한 균형이 중요하다"라는 말을 한 사람은?</h2>
+        <input type="radio" name="five" value="1">1. 탈레스<br/><br/>
+        <input type="radio" name="five" value="2">2. 루소<br/><br/>
+        <input type="radio" name="five" value="3">3. 정승호<br/><br/>
+        <input type="radio" name="five" value="4">4. 김구라<br/><br/>
+        <input type="submit" value="제출하기" style="width: 200px; height:50px">
+    </form>
+<script>
+	function solve() {
+    	const check = document.querySelectorAll('input[type="radio"]:checked');
+    	if (check.length < 5) {
+       		alert("문제를 모두 풀어주세요");
+        	return false;
+    	}else{
+    		return true;    		
+    	}
+	}
+</script>
+</body>
+</html>

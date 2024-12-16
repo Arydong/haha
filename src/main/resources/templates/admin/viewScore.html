@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>학생들 성적입니다</h1>
+<hr>
+<table border="1">
+        <thead>
+            <tr>
+                <th>학생 이름</th>
+                <th>1번 문제</th>
+                <th>2번 문제</th>
+                <th>3번 문제</th>
+                <th>4번 문제</th>
+                <th>5번 문제</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="result : ${result}">
+                <td th:text="${result.student.name}"></td>
+                <td th:text="${result.answerOne}"></td>
+                <td th:text="${result.answerTwo}"></td>
+                <td th:text="${result.answerThree}"></td>
+                <td th:text="${result.answerFour}"></td>
+                <td th:text="${result.answerFive}"></td>
+                <td th:text="${result.score}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+    <h1>시험 결과</h1>
+    <hr>
+
+    <h2 th:if="${result != null}" th:text="${result.student.name} + '님의 점수는? ' + ${result.score} + '점'"></h2>
+    <h2 th:if="${result == null}">시험부터 치고 오세용 :)</h2>
+
+    <h4 th:if="${result != null}">정답확인</h4>
+    <table th:if="${result != null}" border="1">
+        <thead>
+            <tr>
+                <th>문항 번호</th>
+                <th>당신의 답변은?</th>
+                <th>정답</th>
+                <th>결과</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1번</td>
+                <td><span th:text="${result.answerOne}"></span></td>
+                <td><span th:text="${Answers.one}"></span></td>
+                <td>
+                    <span th:if="${result.answerOne == Answers.one}" th:text="'정답'"></span>
+                    <span th:if="${result.answerOne != Answers.one}" th:text="'오답'"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>2번</td>
+                <td><span th:text="${result.answerTwo}"></span></td>
+                <td><span th:text="${Answers.two}"></span></td>
+                <td>
+                    <span th:if="${result.answerTwo == Answers.two}" th:text="'정답'"></span>
+                    <span th:if="${result.answerTwo != Answers.two}" th:text="'오답'"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>3번</td>
+                <td><span th:text="${result.answerThree}"></span></td>
+                <td><span th:text="${Answers.three}"></span></td>
+                <td>
+                    <span th:if="${result.answerThree == Answers.three}" th:text="'정답'"></span>
+                    <span th:if="${result.answerThree != Answers.three}" th:text="'오답'"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>4번</td>
+                <td><span th:text="${result.answerFour}"></span></td>
+                <td><span th:text="${Answers.four}"></span></td>
+                <td>
+                    <span th:if="${result.answerFour == Answers.four}" th:text="'정답'"></span>
+                    <span th:if="${result.answerFour != Answers.four}" th:text="'오답'"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>5번</td>
+                <td><span th:text="${result.answerFive}"></span></td>
+                <td><span th:text="${Answers.five}"></span></td>
+                <td>
+                    <span th:if="${result.answerFive == Answers.five}" th:text="'정답'"></span>
+                    <span th:if="${result.answerFive != Answers.five}" th:text="'오답'"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <a th:href="@{/student/mypage}">마이페이지로 돌아가기</a>
+</body>
+</html>
